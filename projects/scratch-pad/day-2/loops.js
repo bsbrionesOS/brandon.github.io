@@ -30,6 +30,8 @@ function printArrayValues(array) {
  */
 function printArrayValuesInReverse(array) {
   // YOUR CODE BELOW HERE //
+  //too loop backwards over the array we have to start at the last index of array
+  // then end at the index of 0
   for( var i = array.length -1; i > -1; i--){
     console.log(array[i]);
   }
@@ -73,6 +75,7 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
+  //using a for in loop to return an array with the objects value
   for(var key in object){
     return Object.values(object);
   }
@@ -88,6 +91,7 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
+  //using a for in loop to obtain its values and printing them using object[key]
   for(var key in object){
     console.log(object[key]);
   }
@@ -102,6 +106,8 @@ function printObjectValues(object) {
  */
 function getObjectLength(object) {
   // YOUR CODE BELOW HERE //
+  //Object.entries will return an object as an array and using .length to get the
+  // length of the given array
   return Object.entries(object).length;
   
   

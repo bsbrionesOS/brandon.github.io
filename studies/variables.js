@@ -38,7 +38,7 @@ myVariable = "someString";
 *let:
 *
 * 0. Like Var we can use let to delcare diffrent values such as string, numbers, booleans, and other data types.
-* What makes "let" diffrent is that it is confined to the block scope that it's made in. Ypu can't call a let variable outside of its
+* What makes "let" diffrent is that it is confined to the block scope that it's made in. You can't call a let variable outside of its
 * code block.
 *
 * 1. To create a let varaiable we use the keyword, let, followed by a name.

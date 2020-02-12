@@ -14,8 +14,4 @@ var size= "Big";
 var typeDog = size + " " + dog
 console.log(typeDog);//print => "Big Great dane"
 
-//example of join method
 
-var anothArray = ['a',1,'c'];
-
-console.log(anothArray.join(' ')); // print => "a 1 c"

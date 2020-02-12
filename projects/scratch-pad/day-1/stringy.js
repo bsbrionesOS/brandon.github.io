@@ -124,6 +124,7 @@ if(string[string.length -1].toUpperCase() == char.toUpperCase()){
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    //adding string one and stringteo by using the '+' operator
 return stringOne + stringTwo;
 
 
@@ -160,6 +161,8 @@ return args.join('');
  */
 function longest(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
+    //using an if statement to compare the length of two strings
+    //returning string one if it's bigger if not stringtwo
 if(stringOne.length > stringTwo.length){
     return stringOne;
 } else {return stringTwo}

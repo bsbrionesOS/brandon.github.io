@@ -14,6 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
+    // using Array.isArray to test if its strictly an []
     if(Array.isArray(value)){
         return true;
     }else{return false}
@@ -33,6 +34,7 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
+    // testing for {} literal as an object, making sure all other values considered an object returns false
     if(typeof value === 'object' && value !== null && value != Date() && Array.isArray(value) !== true){
         return true;
     }else{return false}
@@ -51,6 +53,7 @@ function isObject(value) {
  */
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
+    // testing for {} and [] literal
     if(typeof value === 'object' && value !== null && value != Date()){
         return true;
     }else{return false}
@@ -81,6 +84,7 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
+    // testing for the type of value returning the type as a string
     if(typeof value === "function"){
         return "function";
     } else if(typeof value === "boolean"){

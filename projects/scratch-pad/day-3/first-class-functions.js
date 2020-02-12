@@ -72,6 +72,8 @@ function createStartsWithFilter(startsWith) {
  */
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
+    //to test weather the last letter of the string is the same as the endsWith
+    // character we have to access the last index of the string and account for casing.
     return function endString(string){
         if(string[string.length - 1].toUpperCase() === endsWith.toUpperCase()){
             return true;
@@ -92,8 +94,10 @@ function createEndsWithFilter(endsWith) {
  */
 function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
+    // create an array literal to collect data
   var arrayMod = [];
-  
+  // to modify the strings within the array a for loop has to be used to run through
+  // the data within the array. The output of the loop will modify and push into new array.
   for(var i = 0; strings.length > i; i++){
       arrayMod.push(modify(strings[i]));
   }
@@ -114,8 +118,10 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    var array = [];
     
+    var array = [];
+    // need to use a for loop to run through the data within the array
+    // return true if all the strings pass, false otherwise.
     for(var i = 0; i <= strings.length-1; i++){
         if(test(strings[i]) === true){
             array.push(i);

@@ -12,7 +12,9 @@
 */
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
- 
+ // using a for loop to print value 0 -100
+ // to see if something is a multiple of 3 or 5 with the result being an absolute
+ // number the '%' has to used. Then using if statements to set up conditions.
   for(var i = 1; i < 101; i++){
     if(i % 3 ===0 && i % 5 ===0){
       console.log('FizzBuzz');

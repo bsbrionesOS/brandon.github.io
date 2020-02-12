@@ -23,8 +23,19 @@
  */
 function range(start, end) {
     // YOUR CODE GOES BELOW HERE //
-    
-    
+    // need to create an array literal to collect the output
+     var arr =[];
+     //using if statement to set the conditons, then using for loop too print out
+     // the numbers between the two parameters given
+     if(start < end){
+         for(var i = start; i <= end; i++){
+             arr.push(i);
+         }
+     }else{
+         for(var i = start; i >= end; i--)
+         arr.push(i);
+     }
+     return(arr);
     
     // YOUR CODE GOES ABOVE HERE //
 }
