@@ -14,7 +14,7 @@
  */
 function isArray(value) {
     // YOUR CODE BELOW HERE //
-    // using Array.isArray to test if its strictly an []
+    // using Array.isArray to test if value is strictly an array
     if(Array.isArray(value)){
         return true;
     }else{return false}
@@ -34,8 +34,10 @@ function isArray(value) {
  */
 function isObject(value) {
     // YOUR CODE BELOW HERE //
-    // testing for {} literal as an object, making sure all other values considered an object returns false
+    // Using and if statement to test the conditions of object being an object literal, and the value thats put in is not
+    // null,date(), or an array because they are all considered objects
     if(typeof value === 'object' && value !== null && value != Date() && Array.isArray(value) !== true){
+        //return true if the value passes all the conditions
         return true;
     }else{return false}
   
@@ -54,8 +56,12 @@ function isObject(value) {
 function isCollection(value) {
     // YOUR CODE BELOW HERE //
     // testing for {} and [] literal
+    //using an if statement to test if value is an object literal or array.
+    //just have to account for if the value is not null or is a date() 
     if(typeof value === 'object' && value !== null && value != Date()){
+       //return true if all the conditions pass
         return true;
+        //otherwise return false
     }else{return false}
     
     
@@ -84,22 +90,39 @@ function isCollection(value) {
  */ 
 function typeOf(value) {
     // YOUR CODE BELOW HERE //
-    // testing for the type of value returning the type as a string
+    // Using if statements and  setting the condtions of if argument is a certain data type
+    // it will return as a string
+    // setting the condition if value is a function
     if(typeof value === "function"){
+        // will return function as a string
         return "function";
+        //value is a boolean
     } else if(typeof value === "boolean"){
+        //return boolean as a string
         return "boolean";
+        //value is null
     }else if( value === null){
+        //will return null as a string
         return "null";
+        //value is undefined
     }else if(typeof value === undefined){
+        //return undefined as a string
         return "undefined";
+        //value is a string
     }else if(typeof value === "string"){
+        //return string as a string
         return "string";
+        //value is an array literal
     }else if(Array.isArray(value)){
+        //will return 'array' as a string
         return "array";
+        // if value is date, has to account if date is an object and also has the constructor of Date
     } else if( typeof value === "object" && value instanceof Date){
+        //will return date as a string
         return "date";
+        //if the value is a number
     }else if(typeof value === "number"){
+        //return number as a string
         return "number";
     }
     

@@ -36,6 +36,7 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
+//creating an object with the keys of id, nameFirst, and nameLast
 function makeContact(id, nameFirst, nameLast) {
 let object = {};
 object.id = id;
@@ -46,9 +47,7 @@ return object;
 
 
 function makeContactList() {
-    /*
-     * You need something here to hold contacts. See length api for a hint:
-     */
+    // need to hold a container to hold contacts
     var contacts = [];
     
     return {
@@ -58,28 +57,39 @@ function makeContactList() {
         },
         // function to take the object to be added to the contact list
         addContact: function(object){
+            //adding the object to contacts by using the .push method()
             contacts.push(object);
         },
         //  returns the contact object if the full name is found
          findContact: function (fullName){
+             //use a foor loop to loop through the array
             for(var i = 0; i < contacts.length; i++)
+            //using if statement to compare the fullname with the values of nameFirst and nameLast with a space inbetween
             if(fullName === contacts[i]["nameFirst"] + " " + contacts[i]["nameLast"])
+            //return the object if the fullName is found
             return contacts[i];
     
         },
         //removing a content object from list given contact
         removeContact: function(contact){
+            //have to use a for loop to loop through the array
             for(var i = 0; i < contacts.length; i++){
                 var currentContact = contacts[i]
+                //use a if statement to compare the argument with the contents of contacts
                 if(contact.id == contacts[i].id){
+                    //if it equals too then using the splice method we remove it from the array
                     contacts.splice(i,1);
                 }
             }
            }, printAllContactNames: function(){
+               //need to create a container where all the full name will be put into
             var contactNames = '';
+            //use a for loop to loop through the array with the contacts
             for(var i = 0; i < contacts.length; i++){
+                //need to add all the properties of nameFirst and last into contact names, with a new line for seperatation
                 contactNames += contacts[i].nameFirst + ' ' + contacts[i].nameLast + '\n';
             }
+            // return the list with the full names that doesnt have a new line at the last full name, using slice method to bring everything needed
             return contactNames.slice(0,contactNames.length-1);
         
         }

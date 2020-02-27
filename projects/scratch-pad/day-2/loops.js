@@ -13,8 +13,9 @@
 function printArrayValues(array) {
   // YOUR CODE BELOW HERE //
   //making a for loop that prints out the values of an array
-  //starting of the array at the index of 0 to the end .length
+  //starting the array at the index of 0 to the end .length
   for( var i = 0;i < array.length; i++){
+    // console.log([i]) will print each individual value of the array to the console
     console.log(array[i]);
   }
   
@@ -33,6 +34,7 @@ function printArrayValuesInReverse(array) {
   //too loop backwards over the array we have to start at the last index of array
   // then end at the index of 0
   for( var i = array.length -1; i > -1; i--){
+    //console.log([i]) will print each individual value of the array to the console
     console.log(array[i]);
   }
   
@@ -47,6 +49,7 @@ function printArrayValuesInReverse(array) {
 function getObjectKeys(object) {
   // YOUR CODE BELOW HERE //
   //using Object.keys will make the keys within an object into an array
+  //returning an array that has the keys of an object
   return Object.keys(object);
   
   
@@ -75,10 +78,10 @@ function printObjectKeys(object) {
  */
 function getObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  //using a for in loop to return an array with the objects value
-  for(var key in object){
+  //Using Obect.values will give an array containing the objects values.
+  
     return Object.values(object);
-  }
+  
   
   
   
@@ -91,7 +94,7 @@ function getObjectValues(object) {
  */
 function printObjectValues(object) {
   // YOUR CODE BELOW HERE //
-  //using a for in loop to obtain its values and printing them using object[key]
+  //using a for in loop to obtain an objects values and printing them using object[key]
   for(var key in object){
     console.log(object[key]);
   }
@@ -121,10 +124,11 @@ function getObjectLength(object) {
  */
 function printObjectValuesInReverse(object) {
   // YOUR CODE BELOW HERE //
-  //make the object into an array for it values
+  //Create a container holding the values of a given object in a Array
   var val = Object.values(object);
-  //create loop for array that prints backwards
+  //Creating a for loop to get access to an array starting at its last index ending at its first
   for(var i = val.length - 1; i > -1; i--){
+    //printing values onto console in reverse
     console.log(val[i]);
   
   }

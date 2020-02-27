@@ -13,18 +13,24 @@
 function fizzBuzz() {
     // YOUR CODE GOES BELOW HERE //
  // using a for loop to print value 0 -100
- // to see if something is a multiple of 3 or 5 with the result being an absolute
- // number the '%' has to used. Then using if statements to set up conditions.
+ // if the number is a multiple of 3 it will print 'Fizz'
+ // if the number is a multiple of 5 it will print 'Buzz'
+ //if number is multiple of both 3 and 5 will print "FizzBuzz"
+ 
   for(var i = 1; i < 101; i++){
+      //to check if number is multiple of 3 and 5 we have to check if the number is divisble by both with NO remainder.
+      // using the % operator will return 0 if the number calculated has no remainder
+      // if the conditions are met then it will print FizzBuzz
+     
     if(i % 3 ===0 && i % 5 ===0){
       console.log('FizzBuzz');
     } else if(i % 5 === 0){
       console.log('Buzz');
     }else if(i % 3 === 0){
-      console.log('Fizz');
+      console.log('fizz');
     }else{console.log(i)}
   }
-
+fizzBuzz(1,15);
 
     // YOUR CODE GOES ABOVE HERE //
 }

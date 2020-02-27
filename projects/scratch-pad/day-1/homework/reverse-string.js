@@ -21,13 +21,14 @@
 
 function reverseString(input) {
     // YOUR CODE GOES BELOW HERE //
-    //create storage container to hold return, 
-    //using a for loop iterate over string to gain acess to each character
-    //concat to my storage of other characters using the +=
+    //create storage container to hold the new output 
     var newString = '';
+    // using a for loop to iterate over the string starting at the last index
     for(var i =input.length -1;i >= 0; i--){
+      // adding the elements into the newstring
       newString += input[i];
     }
+    // returning the newstring that has the reversed input
     return newString;
     
     

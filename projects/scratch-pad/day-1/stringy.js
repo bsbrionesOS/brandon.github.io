@@ -26,7 +26,7 @@ function length(string) {
  */
 function toLowerCase(string) {
     // YOUR CODE BELOW HERE //
-    // making string to lowercase using toLowercase()
+    // making string to lowercase using toLowerCase()
 return string.toLowerCase();
 
 
@@ -61,6 +61,9 @@ function toUpperCase(string) {
  */
 function toDashCase(string) {
     // YOUR CODE BELOW HERE //
+    //returning new string forced to dash case
+    //using regex to symbolize space
+    //Then using the replace method to replace " " with "-" then lowercasing the string
     const regex = / /gi;
 return string.replace(regex,'-').toLowerCase();
 
@@ -107,6 +110,7 @@ if(string[0].toUpperCase() == char.toUpperCase()){
  */
 function endsWith(string, char) {
     // YOUR CODE BELOW HERE //
+    // Use an if statement to get an output of true or false, if the single character is the same as the last character in the string
     // to get access to the end character of the string the following was used [string.length -1] 
     // the end character in the string and the character were changed to uppercase to be compared equally
 if(string[string.length -1].toUpperCase() == char.toUpperCase()){
@@ -124,7 +128,8 @@ if(string[string.length -1].toUpperCase() == char.toUpperCase()){
  */
 function concat(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    //adding string one and stringteo by using the '+' operator
+    //adding string one and stringtwo by using the '+' operator
+    // returning the concatenated string
 return stringOne + stringTwo;
 
 
@@ -143,8 +148,10 @@ return stringOne + stringTwo;
  */
 function join(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    //to have them all join together the .join method is used .join('') represents no space in between
+    //creating a container to hold the arguments being passed
+    //using Array.from to put all arguments into an array
     var args = Array.from(arguments);
+    //using .join to make everything within the array a string and returning it
 return args.join('');
 
     // YOUR CODE ABOVE HERE //
@@ -180,8 +187,10 @@ if(stringOne.length > stringTwo.length){
  */
 function sortAscending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    /*using an if statement to compare the two strings, a is higher in alphabetical order but less then b numerically
-    so to make it return 1 string one would have to be less then string two and so on*/
+    /*using an if statement to compare the two strings,
+    a is higher in alphabetical order but less then b numerically
+    so to make it return: 1,
+    string one would have to be less then string two and so on*/
 if(stringOne < stringTwo){
     return 1;
 }else if(stringOne > stringTwo){
@@ -204,7 +213,10 @@ if(stringOne < stringTwo){
  */
 function sortDescending(stringOne, stringTwo) {
     // YOUR CODE BELOW HERE //
-    /*to make it go the other way around we have to make stringOne greater then stringTwo */
+   /*using an if statement to compare the two strings,
+    a is higher in alphabetical order but less then b numerically
+    so to make it return: 1,
+    string two would have to be greater then string one and so on*/
 if(stringOne > stringTwo){
     return 1;
 }else if(stringOne < stringTwo){

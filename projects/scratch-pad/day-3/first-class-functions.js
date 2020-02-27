@@ -52,8 +52,8 @@ function createLessThanFilter(base) {
 function createStartsWithFilter(startsWith) {
     // YOUR CODE BELOW HERE //
     // returning a function with a if statement to compare a character with the beginging character of a string
-    // access the string first character by [0] to make sure case insensitive made everything .Uppercase to be equal
-    //return true if character put in startsWith matches the input of a given first letter of given string; false otherwise 
+    // access the string first character by [0] to make sure case is insensitive, I made everything .Uppercase to be equal
+    //return true if value of startsWith matches the first value of a string.
     return function startString(string){
         if(string[0].toUpperCase() === startsWith.toUpperCase()){
             return true;
@@ -73,7 +73,8 @@ function createStartsWithFilter(startsWith) {
 function createEndsWithFilter(endsWith) {
     // YOUR CODE BELOW HERE //
     //to test weather the last letter of the string is the same as the endsWith
-    // character we have to access the last index of the string and account for casing.
+    // Access the last index of string to find the value and strictly compare it to the value of endsWith
+    //account for casing by making each value being compared to uppercase
     return function endString(string){
         if(string[string.length - 1].toUpperCase() === endsWith.toUpperCase()){
             return true;
@@ -96,12 +97,12 @@ function modifyStrings(strings, modify) {
     // YOUR CODE BELOW HERE //
     // create an array literal to collect data
   var arrayMod = [];
-  // to modify the strings within the array a for loop has to be used to run through
-  // the data within the array. The output of the loop will modify and push into new array.
+  /* to modify the strings within the array, a for loop has to be used to run through
+   the data within the array. The output of the loop will modify and push into new array.*/
   for(var i = 0; strings.length > i; i++){
       arrayMod.push(modify(strings[i]));
   }
-    
+    // returning the array of strings modified
     return arrayMod;
     
     // YOUR CODE ABOVE HERE //
@@ -118,16 +119,20 @@ function modifyStrings(strings, modify) {
  */
 function allStringsPass(strings, test) {
     // YOUR CODE BELOW HERE //
-    
+    // create a container to hold all strings that return true
     var array = [];
     // need to use a for loop to run through the data within the array
-    // return true if all the strings pass, false otherwise.
+    
     for(var i = 0; i <= strings.length-1; i++){
+        //if conditions if the string that is being tested within the function returns true it will ne pushed into the array
         if(test(strings[i]) === true){
             array.push(i);
         }
     }
+    // using another if condition to comapre both the strings, if the strings aka the original array with strings has a bigger length value
+    // then the new array of strings. That means that a string within the array was false.
     if(strings.length > array.length){
+        //return false if string has a bigger length then array
         return false;
     }else {return true}
     

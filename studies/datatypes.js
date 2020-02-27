@@ -37,6 +37,11 @@ console.log(addNum); // => prints out 5
 * 
 * 1. To create a string you would have to declare it in a variable and initilize by using single or double quotation marks then putting in 
 * the word, letters, or sentence you want to use.
+*
+* 2. To acess individual characters in a string you can use bracket notation or charAt() with the specific index of the string.
+*      Acessing the last character in a string can be done by using .length -1
+*
+* 3. Strings are also unmutable
 */
 // declaring and initilizing a string
 
@@ -46,6 +51,18 @@ console.log(myString); // => "This is a String"
 // finding number of elements in a string
 
 console.log(myString.length); // => print out 16
+
+// Acessing an individual character in a string
+
+console.log(myString[0]); // => prints out T
+
+console.log(myString.charAt(1)); // => prints out h
+
+// Acessing the last chracter in a string
+
+console.log(myString[myString.length - 1]); // => prints out g
+
+
 
 /*
 *Booleans;
@@ -113,14 +130,49 @@ console.log(-1/0); // prints => -infinity
 * indicate how many elements are inside. By using push pop shift and unshift you can add or remove elements
 *
 * 1. An array is made by using brackets [], then putting any data type seperated by a comma
+*
+* 2. Similar to a string you can get acess to a value in an array by doing bracket notation
+*
+* 3. Arrays are mutable so you can change an element within the array
+*
 */
 // declaring and assigning an array
 var myArray = [1, 'a'];
 console.log(myArray); // => prints [1, 'a'] in this instance the array has a number and a string inside
 
-// manipulating an array using pop
+// manipulating an array using pop 
 myArray.pop();
 console.log(myArray); // prints [1] pop removed the last element in the array
+
+// manipulating an array using push
+
+myArray.push(true);
+console.log(myArray); // prints [1, true] pushes the value to the end
+
+// manipulating an array using shift
+
+myArray.shift();
+console.log(myArray); // => prints [true] removes the first element in the array
+
+// manipulating using unshift
+
+myArray.unshift('hello');
+console.log(myArray); // => ['hello', true] adds value to the beginning of the array
+
+// accessing values for arrays
+
+console.log(myArray[0]); // => 'hello'
+
+//accessing last value in the array
+
+console.log(myArray[myArray.length - 1]); // => 'true'
+
+// changing an element in array
+
+myArray[0] = false;
+
+console.log(myArray); // => [false, true]
+
 
 /*
 * Object:
@@ -160,10 +212,24 @@ add(2); // prints => 4
 * 0. Copy by value referes to simple data types because they are stored in the variable itself.
 * where as copy by reference  referes to complex data types because an array or object isnt stored in the variable
 * itself the variable is able to point to the reference of the array.
+*
+* 1. When copied by value the item copied will no longer be associated with the original,
+*.       When copied by reference the copy will have a direct link to the original.
 */
 // example of copy by value
 
 var myNum1 = 3;
 
 var myNum2 = myNum1;
-console.log(myNum2); // prints => 3 because the value that is in myNum1 gets copied to myNum2
+console.log(myNum2); // prints => 3 because the value that is in myNum1 gets copied to myNum2, num2 now contains the value of 3
+
+// example of copy by reference
+
+var arrayy = [1,2,3,4];
+
+var arrayyCopy = arrayy;
+
+arrayyCopy.pop(); // => removes the last element from array
+
+console.log(arrayy); // => [1,2,3] what was changed in arrayCopy will have an effect in arrayy
+

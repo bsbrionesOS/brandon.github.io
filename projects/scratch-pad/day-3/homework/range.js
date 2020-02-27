@@ -27,12 +27,17 @@ function range(start, end) {
      var arr =[];
      //using if statement to set the conditons, then using for loop too print out
      // the numbers between the two parameters given
+     //if start is less then end
      if(start < end){
+         
          for(var i = start; i <= end; i++){
+             //all numbers between start and end will be pushed into the array in ascending order
              arr.push(i);
          }
      }else{
+         // if start is greater
          for(var i = start; i >= end; i--)
+         //will push the numbers into array in descending order
          arr.push(i);
      }
      return(arr);

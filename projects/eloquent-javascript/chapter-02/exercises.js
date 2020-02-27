@@ -4,6 +4,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(number) {
+    var pyramid = '';
+  for(var i = 0; i < number; i++){
+    pyramid = '#' + pyramid ; 
+    console.log(pyramid);
+  }
 
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -11,15 +16,43 @@ function triangles(number) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz(start, end) {
-  
+  for(var i = start; i <= end; i++){
+   if(i % 3 ===0 && i % 5 ===0){
+      console.log('fizzbuzz');
+    } else if(i % 5 === 0){
+      console.log('buzz');
+    }else if(i % 3 === 0){
+      console.log('fizz');
+    }else{console.log(i)}
+  } 
+ 
 }
-
+fizzBuzz(1,15);
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function drawChessboard() {
-
+function drawChessboard(number) {
+var board = "";
+//for loop through the rows
+for (var row = 0; row < number; row++) {
+//nested for loop through the columns
+ for (var col = 0; col < number; col++) {
+   //if row is even and col is odd add #
+  if(row % 2 === 0 && col % 2 !== 0){
+    board += "#";
+   //else if row is odd and col is odd add " "
+  } else if(row % 2 !== 0 && col % 2 !== 0){
+    board += " ";
+   //else if row is even and col is even add " "
+  } else if(row % 2 === 0 && col % 2 === 0){
+    board += " ";
+   //else if row is odd and col is even add #
+  }else {board += "#"}
+}
+board += "\n";
+}
+console.log(board);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

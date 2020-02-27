@@ -14,6 +14,7 @@
  */
 function print(value) {
   // YOUR CODE BELOW HERE //
+  //printing value to screen using console.log()
   console.log(value);
   
   
