@@ -27,11 +27,22 @@ var minusMe = function(num){
 };
 console.log(minusMe(4)); //print => 2 
 
-/*
-* Scope
+/**
+* Scopes
+*   0. Scopes determines the visibilty of variables, functions and other objects in our code. In javascipt scopes operate by the lexical scope
+*           which allows children scope to have access to varaibles decalred in their parent scope.
+*   
+*   1. Theres 3 types of scopes, global, local, and block scope
+* 
+*   2. Global scope - any varaibale or function that is wrriten in the global scope can be accessed by any other scope
+* 
+*   3. Locol scope - any varaiable that is written inside a function is bounded to that function and cant be used outside of the function
+* 
+*   4. Block scope - any variable that is written inside a if statement, switch, for any loops. By using const or let inside the block they only
+*                       exist wihtin that block of code.
+*   
+*  
 *
-*  Functions can get access to variables in the global scope or parent scope, but it cant get access to variables inside local or nested
-* functions. Where as the nested function can get access to everything outside of it,
 *
 */
 // example of scope
@@ -46,7 +57,13 @@ newScope();// prints => 'local'
 
 console.log(scope); // print => 'global' it did not get acess to the var scope inside the function newScope
 
-// example of a closure
+/**
+ * Closures
+ * 
+ * 
+ * 
+ */
+ // example of closure
  var myName = 'Brandon';
  
  function show(){

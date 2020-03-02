@@ -23,6 +23,16 @@
  *              for else will be after '}' followed by the key word else then {} with the action inside
  */
  
+ /**
+  * Syntax of if statements
+  *   
+  * if(condition){
+  *   //action to be performed in code block
+  *} else if(condition){
+  *   //action to be performed
+  * }else{//action to be performed}
+  */
+ 
  
  
 // example of if-else if- else stament
