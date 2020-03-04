@@ -1,8 +1,10 @@
 //////////////////////////////////////////////////////////////////////
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// input:object, with key value pairs
+// output: array with just the values
 function objectValues(object) {
+    // using Object.values will return an array of values
 return Object.values(object);
 } 
 
@@ -12,24 +14,30 @@ return Object.values(object);
 
 function keysToString(object) {
 // should return all keys in object to a string seperated by a space
+// using Object.keys will return an array with the keys
+// by using .join(' ') will return all the contents in the array as a string seperated by a space
 return Object.keys(object).join(' ');
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+//givin an object with diffrent datatype as the value, return only the string values
 function valuesToString(object) {
-    // return all values in object to a string 
+    // by setting a variable to hold our string
     var string = '';
+    // using a while loop to get access to they key value pairs
     for(var key in object){
+        // setting a condtional statment to strictly compare the values to a string using typeof
         if(typeof object[key] === "string"){
+            // if its true the value will be added to the string with a space to seperate from other values
            string += object[key] + " ";
            //string += ' ';
            
         }
         
      }
+     // setting a variable of trim string to have the new string that doesnt have any access white space from the beginging and end
      let trimstring = string.trim(); 
      
     return trimstring;
@@ -38,11 +46,15 @@ function valuesToString(object) {
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// making a test to see if the collection is an array or object
 function arrayOrObject(collection) {
+    // using Array.isArray method since it will test if the input is an array
     if(Array.isArray(collection) === true ){
+        // returning array as a string if it passes
         return "array";
+        // checking to see if the collection is an object literal taking into account that diffrent data types also are objects
     }else if(typeof collection === 'object' && collection !== null && collection != Date()){
+        // returning object as a string if it passes
         return 'object';
     }
 }
@@ -53,16 +65,21 @@ function arrayOrObject(collection) {
 
 function capitalizeWord(string) {
 // should take a string and capitalize the first character and return the string
+// making a container for our new string
     let newString = "";
+    //using a for loop to run through the string
     for (var i = 0; i < string.length; i++) {
-//        if (string[i] !== " ") {
+//        once the index hits 0 thats what we want to modify
             if (i === 0) {
+                // string i will have access to the first character in the string and we capitalize, then add to our string
                 newString += string[i].toUpperCase();
             } else {
+                // for the rest of the letters in the string will just be added to our new string
             newString += string[i];
             }
-//        }
+
     }
+    // new string will have the old string with the first word capitlized
     return newString;
 }
 
@@ -71,12 +88,17 @@ function capitalizeWord(string) {
 //////////////////////////////////////////////////////////////////////
 
 function capitalizeAllWords(string) {
-    
+    // since we want to capitalize all the words in a string, split method is used to put all the words in its own index
+
    string = string.split(' ');
+   // using a for loop to iterate through the array
   
    for(var i = 0; i < string.length; i++){
+       // getting access to each individual word, uppercasing the first letter. 
+       //using substr(1) will return the rest of the letters in the string
      string[i] = string[i][0].toUpperCase() + string[i].substr(1);
    }
+   // returning all the words as a string seperated by a whitespace
   return string.join(' ');
 
 
@@ -106,10 +128,13 @@ function welcomeMessage(object) {
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
-
+// input an object that has a key value pair of name and species
 function profileInfo(object) {
+    // setting a variable thats going to contain the name that will be capitlized
     let capName = object.name[0].toUpperCase() + object.name.substr(1);
+    // setting a variable that will contain the value of species capilized
     let capSpecies = object.species[0].toUpperCase() + object.species.substr(1);
+    // wanting to return the name is a species
     return capName + " is a " + capSpecies;
 }
 
@@ -124,10 +149,14 @@ function profileInfo(object) {
  * C/E: if there are no noises, or if noises is an empty array
  */
 function maybeNoises(object) {
+    // setting conditional statment to check if the object has a noise key value pair
+    // testing to see if the nosies has a value
     if (object.noises === undefined) {
         return "there are no noises";
+        // testing to see if the value of nosies has any elements within its array
     } else if (object.noises.length > 0 === false) {
         return "there are no noises";
+        // if noises has a value of an array then returning all the nosies as a string seperated by a space
     } else if (Array.isArray(object.noises) === true ) {
         return object.noises.join(" ");
     }

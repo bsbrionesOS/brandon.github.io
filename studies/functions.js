@@ -27,6 +27,14 @@ var minusMe = function(num){
 };
 console.log(minusMe(4)); //print => 2 
 
+// example of a function that doesnt have any parameter
+var num4 = 6;
+
+function multiply(){
+    return num4 *= 2;
+}
+console.log(multiply()); // => returns 24 everytime we invoke multiply the number contianed in num4 wil be modified;
+
 /**
 * Scopes
 *   0. Scopes determines the visibilty of variables, functions and other objects in our code. In javascipt scopes operate by the lexical scope
@@ -59,7 +67,9 @@ console.log(scope); // print => 'global' it did not get acess to the var scope i
 
 /**
  * Closures
+ *  0. a closure is just when a function has a reference to its parantes scope contained inside of its body
  * 
+ *  1. All functions form closures
  * 
  * 
  */
@@ -70,5 +80,6 @@ console.log(scope); // print => 'global' it did not get acess to the var scope i
      console.log(myName);
  }
  show(); // print => "brandon" created a simple closure  where the function was able to take the global variable and use it inside the function
+                // inside of the function you can see that it carries the reference of myName, which is located outside of the actual function
  
 

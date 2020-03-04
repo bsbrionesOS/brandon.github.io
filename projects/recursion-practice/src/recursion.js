@@ -5,11 +5,30 @@
 // Example:  5! = 5 x 4 x 3 x 2 x 1 = 120
 // factorial(5);  // 120
 var factorial = function(n) {
+  // we want to create the case base for this function
+  // want to create a stop condition when n = 0, also since we dont want to mulitply by 0 we return 1
+  if(n === 0){
+    return 1;
+    // to account for negative numbers we math.sign is used and if it returns -1 which means that n is a negative number
+    // null will be returned
+  }else if (Math.sign(n) === -1){
+    return null;
+  }
+  
+  // want to create the recurssion where n is going to be multiplied
+  return n * factorial(n - 1);
 };
 
 // 2. Compute the sum of an array of integers.
 // Example:  sum([1, 2, 3, 4, 5, 6]);  // 21
 var sum = function(array) {
+  //wanting to use the base to stop when the array only has 0 elem
+  // return 0 when the array is empty
+  if(array.length === 0){
+    return 0;
+  }
+  // the first value in the array will be added, remove the first index of the array each call
+  return array[0] + sum(array.slice(1));
 };
 
 // 3. Sum all numbers in an array containing nested arrays.
@@ -19,6 +38,20 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+  
+  //also accounting for negative numbers
+  if(n < 0){
+    // if the number is even recalling it back in the function as a positive
+     return isEven(Math.abs(n));
+     // if number is odd will return false
+  } else if(n === 1){
+    return false;
+    // if number is even will return true
+  }else if(n === 0){
+    return true;
+  }
+  // if number is bigger the 1 or 2, subtract by -2 and that will result to 1 or 0
+   return isEven( n - 2);
 };
 
 // 5. Sum all integers below a given integer.
