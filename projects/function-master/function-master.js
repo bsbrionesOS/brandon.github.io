@@ -193,7 +193,7 @@ function hasWord(string, word) {
  * O: the object, with the name added to its friends array.
  * C/E: none
  */
- //access the the friends array through dot notation, and pushing the name into it. then you return the updated object
+ //access  the friends array through dot notation, and pushing the name into it. then you return the updated object
 function addFriend (name, object) {
     object.friends.push(name);
     return object;
@@ -227,24 +227,33 @@ function isFriend(name, object) {
 //////////////////////////////////////////////////////////////////////
 
 function nonFriends(name, array) {
+    // creating three containers
+    
  var nameList = [];
     var result = [];
     var current = null;
+    // using a for loop to iterate through the array of objects
     for(var i=0; i<array.length; i++){
+        // if the target name matches a name thats within the object
         if(name === array[i].name){
+            // it will reassign current with the object with the name found
             current = array[i];
         }else{
+            //all the names will be pushed into the nameList
             nameList.push(array[i].name);
         }
     }
-
+    
+// if the current or name does not exist, then that person is not freinds with anyone, and nameList will have everyones name in it
     if(current === null){
         return nameList;
     }
-
-    for(var i=0; i<nameList.length; i++){
-        if(current.friends.indexOf(nameList[i]) == -1){
-            result.push(nameList[i]);
+// have to do another for loop to iterate over the array of friends of that person
+    for(var v=0; v<nameList.length; v++){
+        // indexOf will look if that value is inside an array, if its not it will return the boolean of false or -1
+        if(current.friends.indexOf(nameList[v]) == -1){
+            // if it is false, which means that person isnt friends with, then pushing those names into reuslt
+            result.push(nameList[v]);
         }
     }
 
@@ -254,9 +263,13 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// should update the value of key with the new value
+// if the key and value does not exist it should create it
 function updateObject(object, key, value) {
+    //just reassigning the value by accessing the object key
+    //this will also add the key and value to the object if it doesnt exist
 object[key] = value;
+// returning object
   return object;
 }
 
@@ -266,16 +279,17 @@ object[key] = value;
 
 function removeProperties(object, array) {
 //make a for loop to get iterate through the array
-//loop through the object
-//check to see if any of the elements in the array are equal to any of the keys
-// remove the key/value if they do match
-//return the object
+
 for(var i = 0; i < array.length; i++){
+    //loop through the object
     for(var key in object){
+        //check to see if any of the elements in the array are equal to any of the keys
         if(array[i] === key){
+            // remove the key/value if they do match
             delete object[key];
         }
     }
+    //return the object
 }return object;
 
 }

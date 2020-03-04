@@ -21,13 +21,12 @@ elementalAnimal += 'fox';
 console.log(elementalAnimal); // => firefox
 
 /**
- *  1. You can find the length of a given string using the .length this will give you how many elements 
- *      are in the string.
+ *  1. trim method() is able to shave off any unessecary whitespaces that might be before or after the word in the string
  */
 
 // example of .length
-var findLength = 'example';
-console.log(findLength.length); // => 7 theres a total of 7 elements in this string
+var trimming = '   example   ';
+console.log(trimming.trim()); // print => "example" there will be no whitespaces before or after the word of example 
 
 /**
  * 2. Can also change the casing in a string from uppercase to lowercase, or lowercase to uppercase
