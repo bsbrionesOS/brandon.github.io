@@ -24,9 +24,9 @@ console.log(elementalAnimal); // => firefox
  *  1. trim method() is able to shave off any unessecary whitespaces that might be before or after the word in the string
  */
 
-// example of .length
+// example of trim
 var trimming = '   example   ';
-console.log(trimming.trim()); // print => "example" there will be no whitespaces before or after the word of example 
+console.log(trimming.trim()); // prints => "example" there will be no whitespaces before or after the word of example 
 
 /**
  * 2. Can also change the casing in a string from uppercase to lowercase, or lowercase to uppercase
