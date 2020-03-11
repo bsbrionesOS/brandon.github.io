@@ -4,8 +4,11 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 function triangles(number) {
+  // making an empty string of pyramid
     var pyramid = '';
+    // looping though the number
   for(var i = 0; i < number; i++){
+    // will add the given number of hashes to the string
     pyramid = '#' + pyramid ; 
     console.log(pyramid);
   }
@@ -16,13 +19,18 @@ function triangles(number) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function fizzBuzz(start, end) {
+  // making a for loop to iterate through the numbers
   for(var i = start; i <= end; i++){
+    // if a number is divisible by both 3 and 5 will retun fizzbuzz
    if(i % 3 ===0 && i % 5 ===0){
       console.log('fizzbuzz');
+      // if number is only divisble by 5 will return buzz
     } else if(i % 5 === 0){
       console.log('buzz');
+      // if number is only divisible by 3 return fizz
     }else if(i % 3 === 0){
       console.log('fizz');
+      // return just the number if it isnt
     }else{console.log(i)}
   } 
  

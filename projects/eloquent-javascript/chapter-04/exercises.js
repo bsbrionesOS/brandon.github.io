@@ -21,10 +21,14 @@ function range(start, end, step = start < end ? 1 : -1) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum(array) {
+  // setting a counter
 let total = 0;
+// getting access to the array
   for (let value of array) {
+    // adding the value to the total
     total += value;
   }
+  // return total
   return total;
 }
 
